@@ -98,6 +98,15 @@ class HomeBlock
     private $link;
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean", options={"default": true})
+     *
+     * @Assert\NotBlank
+     */
+    private $displayFilter = true;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(type="datetime")
@@ -246,6 +255,16 @@ class HomeBlock
         $this->link = $link;
 
         return $this;
+    }
+
+    public function hasDisplayFilter(): bool
+    {
+        return $this->displayFilter;
+    }
+
+    public function setDisplayFilter(bool $displayFilter)
+    {
+        $this->displayFilter = $displayFilter;
     }
 
     public function getUpdatedAt(): \DateTime

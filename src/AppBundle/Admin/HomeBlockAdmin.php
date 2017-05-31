@@ -64,6 +64,9 @@ class HomeBlockAdmin extends AbstractAdmin
             ])
             ->add('link', null, [
                 'label' => 'Cible du lien',
+            ])
+            ->add('displayFilter', null, [
+                'label' => 'Afficher le filtre',
             ]);
     }
 
